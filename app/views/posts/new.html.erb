@@ -1,0 +1,12 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :customer_name, label: 'Customer Name' %>
+  <%= f.input :customer_email, label: 'Customer Email'  %>
+  <%= f.input :customer_phone_no, label: 'Customer Phone no'  %>
+  <%= f.input :house_name, label: 'House Name'  %>
+  <%= f.input :house_address, label: 'House Address'  %>
+  <%= f.input :description, label: 'Description'  %>
+  <%= f.collection_radio_buttons :post_type_select, [['Rent', 'Rent'] ,['Sell', 'Sell']],:first, :last %>
+  
+  <%= f.input :image %>
+  <%= f.button :submit %>
+<% end %>
