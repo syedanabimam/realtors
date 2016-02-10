@@ -1,7 +1,25 @@
-<h1>Realtors</h1>
-<%= link_to "New Post", new_post_path %>
+<!--<h1>Realtors</h1>-->
+<!--<%= link_to "New Post", new_post_path %>-->
 
-<% @posts.each do |post| %>
-  <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
-  <%= post.customer_name %>
-<% end %>
+<!--<% @posts.each do |post| %>-->
+<!--  <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>-->
+<!--  <%= post.customer_name %>-->
+<!--<% end %>-->
+
+<div class="posts-wrapper row">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-head">
+        <div class="name">
+          Test
+        </div>
+      </div>
+      <div class="image center-block">
+        <%= link_to (image_tag post.image.url(:medium), class: 'img-responsive'), post_path(post) %>
+      </div>
+      <p class="post-detail">
+        <%= post.customer_name %>
+      </p>
+    </div>
+  <% end %>
+</div>
