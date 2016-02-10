@@ -1,15 +1,55 @@
-<h1> <%= @post.customer_name %> </h1> <br/>
-<%= image_tag @post.image.url(:medium) %> <br/>
-<%= @post.customer_email %> <br/>
-<%= @post.customer_name %> <br/>
-<%= @post.customer_phone_no %> <br/>
-<%= @post.house_name %> <br/>
-<%= @post.house_address %> <br/>
-<%= @post.post_type_select %> <br/>
-<%= @post.description %> <br/>
+<!--<h1> <%= @post.customer_name %> </h1> <br/>-->
+<!--<%= image_tag @post.image.url(:medium) %> <br/>-->
+<!--<%= @post.customer_email %> <br/>-->
+<!--<%= @post.customer_name %> <br/>-->
+<!--<%= @post.customer_phone_no %> <br/>-->
+<!--<%= @post.house_name %> <br/>-->
+<!--<%= @post.house_address %> <br/>-->
+<!--<%= @post.post_type_select %> <br/>-->
+<!--<%= @post.description %> <br/>-->
 
-<div class="text-center edit-links">
-  <%= link_to "Cancel", posts_path %>
-  |
-  <%= link_to "Edit Post", edit_post_path(@post) %>
+<!--<div class="text-center edit-links">-->
+<!--  <%= link_to "Cancel", posts_path %>-->
+<!--  |-->
+<!--  <%= link_to "Edit Post", edit_post_path(@post) %>-->
+<!--</div>-->
+
+
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+      <div class="name text-center">
+        <%= @post.house_name %>
+      </div>
+    </div>
+    <div class="image center-block">
+      <%= image_tag @post.image.url, class: 'img-profile' %>
+    </div>
+    <div class="text-center post-detail">
+      <h3>Customer Name: <%= @post.customer_name %></h3>
+    </div>
+    
+    <div class="text-center post-detail">
+      <h3>Customer Email: <%= @post.customer_email %></h3>
+    </div>
+    <div class="text-center post-detail">
+      <h3>Customer Phone No: <%= @post.customer_phone_no %></h3>
+    </div>    
+
+    <div class="text-center post-detail">
+      <h3>House Address: <%= @post.house_address %></h3>
+    </div>    
+    <div class="text-center post-detail">
+      <h3>Want to: <%= @post.post_type_select %></h3>
+    </div> 
+    <div class="text-center post-detail">
+      <h3>Description about Property: <%= @post.description %></h3>
+    </div> 
+    
+    <div class="text-center edit-links">
+      <%= link_to "Cancel", posts_path %>
+      |
+      <%= link_to "Edit Post", edit_post_path(@post) %>
+    </div>
+  </div>
 </div>
