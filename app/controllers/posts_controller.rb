@@ -29,7 +29,16 @@ class PostsController < ApplicationController
     def update
        @post = Post.find(params[:id])
        @post.update(post_params)
-       redirect_to(post_path(@post)) 
+       #redirect_to(post_path(@post)) 
+       #flash[:success] = "Post updated"
+       
+       if @post.update(post_params)
+          flash[:success] = "Post updated"
+          redirect_to(post_path(@post)) 
+       else
+          flash[:alert] = "Something is wrong with your image"
+          render :new
+       end
     end
     
     private

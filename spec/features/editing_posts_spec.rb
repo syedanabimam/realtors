@@ -15,4 +15,10 @@ feature 'Editing posts' do
     expect(page).to have_content("Post updated")
     expect(page).to have_content("John H Drumster")
   end
+  it "won't update a post without an image" do  
+    attach_file('Image', 'spec/files/house.zip')
+    click_button 'Update Post'
+    
+    expect(page).to have_content("Something is wrong with your image")
+  end  
 end  
