@@ -1,2 +1,7 @@
 <h1>Realtors</h1>
 <%= link_to "New Post", new_post_path %>
+
+<% @posts.each do |post| %>
+  <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+  <%= post.customer_name %>
+<% end %>

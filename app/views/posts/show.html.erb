@@ -1,9 +1,15 @@
-<h1> <%= @post.customer_name %> </h1> 
-<%= image_tag @post.image.url(:medium) %>
-<%= @post.customer_email %>
-<%= @post.customer_name %>
-<%= @post.customer_phone_no %>
-<%= @post.house_name %>
-<%= @post.house_address %>
-<%= @post.post_type_select %>
-<%= @post.description %>
+<h1> <%= @post.customer_name %> </h1> <br/>
+<%= image_tag @post.image.url(:medium) %> <br/>
+<%= @post.customer_email %> <br/>
+<%= @post.customer_name %> <br/>
+<%= @post.customer_phone_no %> <br/>
+<%= @post.house_name %> <br/>
+<%= @post.house_address %> <br/>
+<%= @post.post_type_select %> <br/>
+<%= @post.description %> <br/>
+
+<div class="text-center edit-links">
+  <%= link_to "Cancel", posts_path %>
+  |
+  <%= link_to "Edit Post", edit_post_path(@post) %>
+</div>
