@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def index  
-       @posts = Post.all 
+       @posts = Post.all.order('created_at DESC').page params[:page] 
     end  
     
     def new
@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     
     def update
        @post = Post.find(params[:id])
-       @post.update(post_params)
        
        if @post.update(post_params)
           flash[:success] = "Post updated"
