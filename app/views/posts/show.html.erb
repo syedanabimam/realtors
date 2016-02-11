@@ -1,55 +1,69 @@
-<!--<h1> <%= @post.customer_name %> </h1> <br/>-->
-<!--<%= image_tag @post.image.url(:medium) %> <br/>-->
-<!--<%= @post.customer_email %> <br/>-->
-<!--<%= @post.customer_name %> <br/>-->
-<!--<%= @post.customer_phone_no %> <br/>-->
-<!--<%= @post.house_name %> <br/>-->
-<!--<%= @post.house_address %> <br/>-->
-<!--<%= @post.post_type_select %> <br/>-->
-<!--<%= @post.description %> <br/>-->
+<!--<div class="posts-wrapper row">-->
+<!--  <div class="post">-->
+<!--    <div class="post-head">-->
+<!--      <div class="name text-center">-->
+<!--        <%= @post.house_name %>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="image center-block">-->
+<!--      <%= image_tag @post.image.url, class: 'img-profile' %>-->
+<!--    </div>-->
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>Customer Name: <%= @post.customer_name %></h3>-->
+<!--    </div>-->
+    
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>Customer Email: <%= @post.customer_email %></h3>-->
+<!--    </div>-->
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>Customer Phone No: <%= @post.customer_phone_no %></h3>-->
+<!--    </div>    -->
 
-<!--<div class="text-center edit-links">-->
-<!--  <%= link_to "Cancel", posts_path %>-->
-<!--  |-->
-<!--  <%= link_to "Edit Post", edit_post_path(@post) %>-->
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>House Address: <%= @post.house_address %></h3>-->
+<!--    </div>    -->
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>Want to: <%= @post.post_type_select %></h3>-->
+<!--    </div> -->
+<!--    <div class="text-center post-detail">-->
+<!--      <h3>Description about Property: <%= @post.description %></h3>-->
+<!--    </div> -->
+    
+<!--    <div class="text-center edit-links">-->
+<!--      <%= link_to "Cancel", posts_path %>-->
+<!--      |-->
+<!--      <%= link_to "Edit Post", edit_post_path(@post) %>-->
+<!--    </div>-->
+<!--  </div>-->
 <!--</div>-->
 
 
-<div class="posts-wrapper row">
-  <div class="post">
-    <div class="post-head">
-      <div class="name text-center">
-        <%= @post.house_name %>
-      </div>
+<div class="row">
+    <div class="col-md-3 text-center">
+        <!--<%= image_tag @post.image.url(:medium), class: 'user-show-avatar img-profile' %>-->
     </div>
-    <div class="image center-block">
-      <%= image_tag @post.image.url, class: 'img-profile' %>
+    <div class="col-md-6">
+        <div class="text-center">
+          <%= image_tag @post.image.url(:medium), class: 'user-show-avatar img-profile' %>
+        </div>
+        <h1><%= @post.house_name %></h1>
+        <h3><%= @post.customer_name %></h3>
+        <%= @post.house_address %><br/>
+        <div class="well profile-block profile-description">
+            <h3>Description:</h3>
+            <%= @post.description %>
+            <h5>Customer Wants to: <%= @post.post_type_select %> this property</h5>
+        </div>
+        <div class="well profile-block contact-info">
+            <h3>Contact Info:</h3>
+            <%= @post.customer_phone_no %><br/>
+            <%= @post.customer_email %></br>
+         </div>
+         <div class="text-center edit-links">
+            <%= link_to "Cancel", posts_path %>
+            |
+            <%= link_to "Edit Post", edit_post_path(@post) %>
+         </div>
     </div>
-    <div class="text-center post-detail">
-      <h3>Customer Name: <%= @post.customer_name %></h3>
-    </div>
-    
-    <div class="text-center post-detail">
-      <h3>Customer Email: <%= @post.customer_email %></h3>
-    </div>
-    <div class="text-center post-detail">
-      <h3>Customer Phone No: <%= @post.customer_phone_no %></h3>
-    </div>    
-
-    <div class="text-center post-detail">
-      <h3>House Address: <%= @post.house_address %></h3>
-    </div>    
-    <div class="text-center post-detail">
-      <h3>Want to: <%= @post.post_type_select %></h3>
-    </div> 
-    <div class="text-center post-detail">
-      <h3>Description about Property: <%= @post.description %></h3>
-    </div> 
-    
-    <div class="text-center edit-links">
-      <%= link_to "Cancel", posts_path %>
-      |
-      <%= link_to "Edit Post", edit_post_path(@post) %>
-    </div>
-  </div>
 </div>
+
