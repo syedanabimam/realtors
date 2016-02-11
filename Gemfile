@@ -47,6 +47,8 @@ gem 'paperclip', '4.3'
 
 #gem 'sass-rails', '3.2'
 
+gem 'kaminari', '0.16.3' 
+
 #-----------------------------------------------------------------------
 
 # Use ActiveModel has_secure_password

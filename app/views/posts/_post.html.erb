@@ -1,0 +1,15 @@
+<div class="posts-wrapper row">
+    <div class="post">
+          <div class="post-head">
+            <div class="name">
+              <%= post.house_name %>
+            </div>
+          </div>
+          <div class="image center-block">
+            <%= link_to (image_tag post.image.url(:medium), class: 'img-responsive'), post_path(post) %>
+          </div>
+          <p class="post-detail">
+            <%= post.customer_name %>
+          </p>
+    </div>
+</div>
