@@ -8,11 +8,13 @@
         </div>
         <h1><%= @post.house_name %></h1>
         <h3><%= @post.customer_name %></h3>
+        <h3>Currently <span class="label label-primary"><%= @post.status %></span></h3>
         <%= @post.house_address %><br/>
         <div class="well profile-block profile-description">
             <h3>Description:</h3>
             <%= @post.description %>
             <h5>Customer Wants to: <%= @post.post_type_select %> this property</h5>
+            
         </div>
         <div class="well profile-block contact-info">
             <h3>Contact Info:</h3>
