@@ -1,9 +1,11 @@
-<div class="text-center">
-  <h2>Recently Added Posts</h2>
-  <%= paginate @posts %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1 class="text-center"> Recently Added Posts</h1>
+        <%= paginate @posts %>
+        <ul class="list-unstyled">
+            <% @posts.each do |post| %>
+                <%= render 'post', post: post %>
+            <% end %>
+        </ul>
+    </div>
 </div>
-<% @posts.each do |post| %>
-  <%= render 'post', post: post %>
-<% end %>
-
-
