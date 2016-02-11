@@ -23,7 +23,11 @@ class PostsController < ApplicationController
     end
     
     def edit
-       @post = Post.find(params[:id])  
+       @post = Post.find(params[:id])
+       if @post.status == "Sold" || @post.status == "Rented"
+         flash[:error] = "This property has already been #{@post.status} and therefore cannot be edited"
+         redirect_to(post_path(@post))
+       end
     end
     
     def update
@@ -59,7 +63,6 @@ class PostsController < ApplicationController
           @post.save
           flash[:success] = "#{@post.house_name} Sold!" 
           redirect_to posts_path 
-           
       end 
     end
     
