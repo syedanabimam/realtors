@@ -45,6 +45,24 @@ class PostsController < ApplicationController
       redirect_to posts_path
     end 
     
+    def transaction
+      @post = Post.find(params[:id])
+      @post.action_n(action_name)
+      if @post.post_type_select == "Rent"
+          @post.status = "Rented" 
+          @post.save
+          #@post.update_all(["status = Rented"], :id => @post.id)
+          flash[:success] = "#{@post.house_name} Rented!" 
+          redirect_to posts_path
+      else
+          @post.status = "Sold"
+          @post.save
+          flash[:success] = "#{@post.house_name} Sold!" 
+          redirect_to posts_path 
+           
+      end 
+    end
+    
     private
     
     def post_params

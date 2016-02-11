@@ -14,13 +14,21 @@ class Post < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   
+    
+  def action_n(action_name)
+    @action_name = action_name
+  end
+
+  
   protected
   
   def default_values
-    if self.post_type_select == "Rent"
-      self.status = "Not Rented"
-    elsif self.post_type_select == "Sell"
-      self.status = "Not Sold"
+    if @action_name != "transaction"
+      if self.post_type_select == "Rent"
+        self.status = "Not Rented"
+      elsif self.post_type_select == "Sell"
+        self.status = "Not Sold"
+      end
     end
   end
 

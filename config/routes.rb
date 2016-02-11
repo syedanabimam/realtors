@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  root  'posts#index' 
-  resources :posts  
+  root  'posts#index'
+  
+  resources :posts do
+    member do
+      post :transaction
+    end
+  end
+  
+  get '/posts/:id/transaction', to: 'posts#transaction', as: 'transaction'
+  #get '/posts/:id/transaction', to: 'posts#transaction'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
