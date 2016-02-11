@@ -1,15 +1,31 @@
-<div class="posts-wrapper row">
-    <div class="post">
-          <div class="post-head">
-            <div class="name">
-              <%= post.house_name %>
-            </div>
-          </div>
-          <div class="image center-block">
-            <%= link_to (image_tag post.image.url(:medium), class: 'img-responsive'), post_path(post) %>
-          </div>
-          <p class="post-detail">
-            <%= post.customer_name %>
-          </p>
+<li>
+    <div class="well row <%= cycle('white-bg', '') %>">
+        <div class="col-sm-4 text-center">
+            <% if post.image %>
+                <%= link_to post_path(post) do %>
+                    <%= image_tag post.image.url(:medium), class: 'user-index-avatar img-profile' %> <br/>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="col-sm-5 col-sm-offset-2">
+            <%= link_to post_path(post) do %>
+                <h2><%= post.house_name %></h2>
+            <% end %>
+            <p class="contact-txt-color">
+                <h3>Price: $<%= post.rent_price %> </h3>
+                <h5>Contact No: <%= post.customer_phone_no %> </h5>
+                <h5>Email: <%= post.customer_email %> </h5>
+                <% if post.status == "Sold" || post.status == "Rented" %>
+                  <h4><span class="label label-danger"><%= post.status %></span></h4>
+                <% else %>
+                   <h4><span class="label label-primary"><%= post.status %></span></h4>
+                   <% if post.status == "Not Rented" %>
+                     <%= link_to "Rent this property", transaction_post_path(post), data: { confirm: "Are you sure you want to rent this property?" }, class: 'btn btn-primary btn-lg btn-block' %>
+                   <% else %>
+                     <%= link_to "Buy this property", transaction_post_path(post), data: { confirm: "Are you sure you want to buy this property?" }, class: 'btn btn-primary btn-lg btn-block' %>
+                   <% end %>
+                <% end %>   
+            </p>
+        </div>
     </div>
-</div>
+</li>

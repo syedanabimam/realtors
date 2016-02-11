@@ -8,8 +8,28 @@ class Post < ActiveRecord::Base
   validates :description, presence: true
   validates :post_type_select, presence: true
   
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  before_save :default_values
+  
+  has_attached_file :image, styles: { medium: "200x200#", thumb: "100x100>" }
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  
+    
+  def action_n(action_name)
+    @action_name = action_name
+  end
+
+  
+  protected
+  
+  def default_values
+    if @action_name != "transaction"
+      if self.post_type_select == "Rent"
+        self.status = "Not Rented"
+      elsif self.post_type_select == "Sell"
+        self.status = "Not Sold"
+      end
+    end
+  end
 
 end
