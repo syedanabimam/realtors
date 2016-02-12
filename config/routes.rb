@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   
   get '/posts/:id/transaction', to: 'posts#transaction', as: 'transaction'
+  get '/reports' => 'posts#reports'
+  #get "posts/download_pdf"
   #get '/posts/:id/transaction', to: 'posts#transaction'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

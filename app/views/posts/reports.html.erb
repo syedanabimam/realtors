@@ -1,0 +1,26 @@
+<div class ="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Reports</h1>
+        <p class="text-center">Please download the reports from below</p>
+        <div class="well text-center">
+            <p>This report contains all the posts</p>
+            <%= link_to "Summary Report", reports_path(:format => :pdf, type: "All"), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>
+        <div class="well text-center">
+            <p>This report contains all the posts that have been not rented</p>
+            <%= link_to "Not Rented Report", reports_path(:format => :pdf, type: "Not Rented"), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>
+        <div class="well text-center">
+            <p>This report contains all the posts that have been rented</p>
+            <%= link_to "Rented Report", reports_path(:format => :pdf, type: "Rented"), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>
+        <div class="well text-center">
+            <p>This report contains all the posts that have been not sold</p>
+            <%= link_to "Not Sold Report", reports_path(:format => :pdf, type: "Not Sold"), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>   
+        <div class="well text-center">
+            <p>This report contains all the posts that have been sold</p>
+            <%= link_to "Sold report", reports_path(:format => :pdf, type: "Sold"), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>         
+    </div>
+</div>

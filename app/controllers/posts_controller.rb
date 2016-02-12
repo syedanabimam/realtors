@@ -2,16 +2,38 @@ class PostsController < ApplicationController
     def index  
       @posts = Post.all.order('created_at DESC').page params[:page] 
       
-      @posts_all = Post.all
-      vars = [@posts_all]
+
+    end
+    
+    def reports
+      @type = params[:type]
+        case @type 
+        when "All"    
+          @posts_all = Post.all 
+        when "Not Rented"    
+          @posts_all = Post.all.where("status = ?", params[:type]) unless params[:type].blank? 
+        when "Rented"    
+           @posts_all = Post.all.where("status = ?", params[:type]) unless params[:type].blank?
+        when "Sold"
+           @posts_all = Post.all.where("status = ?", params[:type]) unless params[:type].blank?
+        when "Not Sold"
+           @posts_all = Post.all.where("status = ?", params[:type]) unless params[:type].blank?
+        else
+          #flash[:success] = "Click again"
+        end  
+
+     
+      
+      #@posts_all = Post.all 
+      vars = [@posts_all, @type]
       respond_to do |format|
         format.html
         format.pdf do #Prawn::Document.new
           pdf = ReportPdf.new(vars)
           send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
         end
-      end
-    end  
+      end      
+    end
     
     def new
        @post = Post.new
@@ -76,9 +98,22 @@ class PostsController < ApplicationController
       end 
     end
     
+    # def download_pdf
+    #   @posts_all = Post.all
+    #   vars = [@posts_all]
+    #   respond_to do |format|
+    #     format.html
+    #     format.pdf do #Prawn::Document.new
+    #       pdf = ReportPdf.new(vars)
+    #       send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+    #     end
+    #   end
+    # end
+    
     private
     
     def post_params
        params.require(:post).permit(:customer_name, :customer_email, :customer_phone_no, :house_name, :house_address, :description, :post_type_select, :image, :status, :rent_price)
     end
+
 end

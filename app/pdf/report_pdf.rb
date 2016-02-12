@@ -3,6 +3,7 @@ class ReportPdf < Prawn::Document
     super()
    # Prawn::Document.new
     @posts = posts[0]
+    @type = posts[1]
     header
     text_content
     table_content
@@ -10,7 +11,7 @@ class ReportPdf < Prawn::Document
 
   def header
     #This inserts an image in the pdf file and sets the size of the image
-    image "#{Rails.root}/app/assets/images/header.png", width: 500, height: 120
+    image "#{Rails.root}/app/assets/images/header.png", width: 430, height: 120
   end
 
   def text_content
@@ -18,14 +19,14 @@ class ReportPdf < Prawn::Document
     y_position = cursor - 50
 
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
-    bounding_box([0, y_position], :width => 270, :height => 300) do
-      text "Lorem ipsum", size: 15, style: :bold
-      text "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum semper placerat. Aenean mattis fringilla risus ut fermentum. Fusce posuere dictum venenatis. Aliquam id tincidunt ante, eu pretium eros. Sed eget risus a nisl aliquet scelerisque sit amet id nisi. Praesent porta molestie ipsum, ac commodo erat hendrerit nec. Nullam interdum ipsum a quam euismod, at consequat libero bibendum. Nam at nulla fermentum, congue lectus ut, pulvinar nisl. Curabitur consectetur quis libero id laoreet. Fusce dictum metus et orci pretium, vel imperdiet est viverra. Morbi vitae libero in tortor mattis commodo. Ut sodales libero erat, at gravida enim rhoncus ut."
+    bounding_box([0, y_position], :width => 270, :height => 100) do
+      text "About Report:", size: 25, style: :bold
+      text "The generated report contains information as requested by admin", size: 15
     end
 
-    bounding_box([300, y_position], :width => 270, :height => 300) do
-      text "Duis vel", size: 15, style: :bold
-      text "Duis vel tortor elementum, ultrices tortor vel, accumsan dui. Nullam in dolor rutrum, gravida turpis eu, vestibulum lectus. Pellentesque aliquet dignissim justo ut fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut venenatis massa non eros venenatis aliquet. Suspendisse potenti. Mauris sed tincidunt mauris, et vulputate risus. Aliquam eget nibh at erat dignissim aliquam non et risus. Fusce mattis neque id diam pulvinar, fermentum luctus enim porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    bounding_box([300, y_position], :width => 270, :height => 100) do
+      text "Support:", size: 25, style: :bold
+      text "Email us at support@realtors.com \n You may call us at +13-456-78945", size: 15
     end
 
   end
