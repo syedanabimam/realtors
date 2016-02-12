@@ -53,6 +53,10 @@ gem 'prawn'
 
 gem 'prawn-table'
 
+gem 'geocoder'
+
+gem 'gmaps4rails'
+
 #-----------------------------------------------------------------------
 
 # Use ActiveModel has_secure_password

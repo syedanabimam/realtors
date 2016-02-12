@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211131150) do
+ActiveRecord::Schema.define(version: 20160212162536) do
 
   create_table "posts", force: true do |t|
     t.string   "customer_name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20160211131150) do
     t.datetime "image_updated_at"
     t.string   "status"
     t.string   "rent_price"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

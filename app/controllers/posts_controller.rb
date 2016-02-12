@@ -51,7 +51,17 @@ class PostsController < ApplicationController
     end
     
     def show
-       @post = Post.find(params[:id]) 
+       @post = Post.find(params[:id])
+       @hash = Gmaps4rails.build_markers(@post) do |post_add, marker|
+        marker.lat post_add.latitude
+        marker.lng post_add.longitude
+        marker.infowindow post_add.house_name
+        # marker.picture({
+        # "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+        # "width" =>  32,
+        # "height" => 32}) 
+        #marker.json({ title: post_add.house_name })
+      end
     end
     
     def edit
@@ -113,7 +123,7 @@ class PostsController < ApplicationController
     private
     
     def post_params
-       params.require(:post).permit(:customer_name, :customer_email, :customer_phone_no, :house_name, :house_address, :description, :post_type_select, :image, :status, :rent_price)
+       params.require(:post).permit(:customer_name, :customer_email, :customer_phone_no, :house_name, :house_address, :description, :post_type_select, :image, :status, :rent_price, :latitude, :longitude)
     end
 
 end

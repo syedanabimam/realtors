@@ -8,6 +8,9 @@ class Post < ActiveRecord::Base
   validates :description, presence: true
   validates :post_type_select, presence: true
   
+  geocoded_by :house_address   # can also be an IP address
+  after_validation :geocode
+  
   before_save :default_values
   
   has_attached_file :image, styles: { medium: "200x200#", thumb: "100x100>" }
