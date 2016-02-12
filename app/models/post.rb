@@ -8,10 +8,10 @@ class Post < ActiveRecord::Base
   validates :description, presence: true
   validates :post_type_select, presence: true
   
-  geocoded_by :house_address   # can also be an IP address
+  geocoded_by :google_address   # can also be an IP address
   after_validation :geocode
   
-  before_save :default_values
+  before_save :default_values, :set_google_address, :geocode
   
   has_attached_file :image, styles: { medium: "200x200#", thumb: "100x100>" }
 
@@ -33,6 +33,10 @@ class Post < ActiveRecord::Base
         self.status = "Not Sold"
       end
     end
+  end
+  
+  def set_google_address
+    self.google_address = "#{self.city} #{self.country}" 
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212162536) do
+ActiveRecord::Schema.define(version: 20160212195458) do
 
   create_table "posts", force: true do |t|
     t.string   "customer_name"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20160212162536) do
     t.string   "rent_price"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "country"
+    t.string   "city"
+    t.string   "google_address"
   end
 
 end

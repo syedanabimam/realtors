@@ -8,17 +8,19 @@
         <%= f.text_field :house_name, class: 'form-control' %>
     </div>
     <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_field :country, class: 'form-control', value: 'Pakistan',:readonly => true %>
+    </div>    
+    <div class="form-group">
+        <%= f.label :city %>
+        <%= f.select :city, ['Karachi', 'Lahore', 'Islamabad', 'Peshawar', 'Multan', 'Rawalpindi', 'Quetta', 'Kohat', 'Sialkot', 'Hyderabad'], {}, class: 'form-control' %>
+    </div> 
+    <div class="form-group">
         <%= f.label :house_address %>
         <%= f.text_field :house_address, class: 'form-control' %>
     </div>
-    <div class="form-group">
-        <%= f.label :latitude %>
-        <%= f.text_field :latitude, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= f.label :longitude %>
-        <%= f.text_field :longitude, class: 'form-control' %>
-    </div>    
+        <%= f.hidden_field :latitude, class: 'form-control' %>
+        <%= f.hidden_field :longitude, class: 'form-control' %>
     <div class="form-group">
         <%= f.label :image %>
         <%= f.file_field :image, class: 'form-control' %>
