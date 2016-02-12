@@ -49,6 +49,10 @@ gem 'paperclip', '4.3'
 
 gem 'kaminari', '0.16.3' 
 
+gem 'prawn'
+
+gem 'prawn-table'
+
 #-----------------------------------------------------------------------
 
 # Use ActiveModel has_secure_password

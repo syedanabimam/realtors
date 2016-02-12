@@ -1,6 +1,16 @@
 class PostsController < ApplicationController
     def index  
-       @posts = Post.all.order('created_at DESC').page params[:page] 
+      @posts = Post.all.order('created_at DESC').page params[:page] 
+      
+      @posts_all = Post.all
+      vars = [@posts_all]
+      respond_to do |format|
+        format.html
+        format.pdf do #Prawn::Document.new
+          pdf = ReportPdf.new(vars)
+          send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+        end
+      end
     end  
     
     def new
