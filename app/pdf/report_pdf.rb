@@ -1,7 +1,7 @@
 class ReportPdf < Prawn::Document
+  # Initializes new instance
   def initialize(posts)
     super()
-   # Prawn::Document.new
     @posts = posts[0]
     @type = posts[1]
     header
@@ -10,12 +10,13 @@ class ReportPdf < Prawn::Document
   end
 
   def header
-    #This inserts an image in the pdf file and sets the size of the image
+    # This inserts an image in the pdf file and sets the size of the image
     image "#{Rails.root}/app/assets/images/header.png", width: 430, height: 120
   end
 
   def text_content
-    # The cursor for inserting content starts on the top left of the page. Here we move it down a little to create more space between the text and the image inserted above
+    # The cursor for inserting content starts on the top left of the page. 
+    # Here we move it down a little to create more space between the text and the image inserted above
     y_position = cursor - 50
 
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
@@ -32,9 +33,9 @@ class ReportPdf < Prawn::Document
   end
 
   def table_content
-    # This makes a call to product_rows and gets back an array of data that will populate the columns and rows of a table
-    # I then included some styling to include a header and make its text bold. I made the row background colors alternate between grey and white
-    # Then I set the table column widths
+    # This makes a call to product_rows and gets back an array of data that will populate the
+    # columns and rows of a table. Some styling is included to a header and make its text bold.
+    # The row background colors alternate between grey and white
     table post_rows do
       row(0).font_style = :bold
       self.header = true
@@ -44,6 +45,7 @@ class ReportPdf < Prawn::Document
   end
 
   def post_rows
+    #Print out the tables with values of posts instance variable
     [['Name', 'Current Status', 'Price']] +
       @posts.map do |post|
       [post.customer_name, post.status, "$ #{post.rent_price}"]

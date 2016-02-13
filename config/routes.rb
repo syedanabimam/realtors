@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
+  # Root/Index Page
   root  'posts#index'
   
+  # Generates RESTFUL API resources for posts with transaction as optional/added member
   resources :posts do
     member do
       post :transaction
     end
   end
   
+  # GET post path for transaction action in posts controller
   get '/posts/:id/transaction', to: 'posts#transaction', as: 'transaction'
+  
+  # Route to Reports Page
   get '/reports' => 'posts#reports'
-  #get "posts/download_pdf"
-  #get '/posts/:id/transaction', to: 'posts#transaction'
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

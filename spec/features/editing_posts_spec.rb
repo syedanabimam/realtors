@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-feature 'Editing posts' do  
+ # This example is to test the edit page or the Update part of CRUD/REST
+ feature 'Editing posts' do  
   background do
     job = create(:post)
 

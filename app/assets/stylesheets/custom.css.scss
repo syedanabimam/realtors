@@ -1,7 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {  
+// Application main html page i.e. html.erb CSS styling
+body {
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
@@ -26,67 +27,3 @@ body {
   margin: 0 auto;
 }
 
-.posts-wrapper {
-  padding-top: 40px;
-  margin: 0 auto;
-  max-width: 642px;
-  width: 100%;
-}
-
-.post {
-  background-color: #fff;
-  border-color: #edeeee;
-  border-style: solid;
-  border-radius: 3px;
-  border-width: 1px;
-  margin-bottom: 60px;
-}
-
-.post-head {
-  height: 64px;
-  padding: 14px 20px;
-  color: #125688;
-  font-size: 30px;
-  line-height: 18px;
-  .thumbnail {}
-  .name {
-    display: block;
-  }
-}
-
-.image {
-  border-bottom: 1px solid #eeefef;
-  border-top: 1px solid #eeefef;
-  height: 200px;
-  width: 200px;
-  border: 2px solid white;
-}
-
-.post-detail {
-  //padding: 5px 10px;
-  font-size: 30px;
-  line-height: 5px;
-}
-
-.form-wrapper {
-  width: 60%;
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 40px;
-  border: 1px solid #eeefef;
-  border-radius: 3px;
-}
-
-.edit-links {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-//show page css
-
-.img-profile {
-    // border-radius: 50%;
-    -webkit-box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 10px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 10px 5px 0px rgba(50, 50, 50, 0.75);
-}

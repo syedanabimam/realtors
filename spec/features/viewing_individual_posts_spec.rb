@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# This example is to test the show page or the Read part of CRUD/REST
 feature 'Can view individual posts' do  
   scenario 'Can click and view a single post' do
     post = create(:post)

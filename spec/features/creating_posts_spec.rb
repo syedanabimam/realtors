@@ -1,5 +1,6 @@
 require 'rails_helper.rb'
 
+# This example is to test the new page or the Create part of CRUD/REST
 feature 'Creating posts' do
     scenario 'can create a house post' do
        visit '/'

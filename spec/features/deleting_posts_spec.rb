@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# This example is to test the delete page or the Delete part of CRUD/REST
 feature 'Deleting posts' do  
   background do
     post = create(:post, customer_name: "cust1", customer_email: "cust1@test.com")
