@@ -3,11 +3,12 @@ class Post < ActiveRecord::Base
   validates :image, presence: true
   validates :customer_name, presence: true
   validates :customer_email, presence: true
-  validates :customer_phone_no, presence: true
+  validates :customer_phone_no, presence: true, :numericality => {:only_integer => true}
   validates :house_name, presence: true
   validates :house_address, presence: true
   validates :description, presence: true
   validates :post_type_select, presence: true
+  validates :rent_price, presence: true, :numericality => {:only_integer => true}
   
   # Google Maps API callbacks to save the latitude and longitude value
   geocoded_by :google_address  

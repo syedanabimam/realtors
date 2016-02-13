@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Posts CSS Styling and Positioning
 .posts-wrapper {
   padding-top: 40px;
   margin: 0 auto;
@@ -39,7 +40,6 @@
 }
 
 .post-detail {
-  //padding: 5px 10px;
   font-size: 30px;
   line-height: 5px;
 }
@@ -61,8 +61,11 @@
 //show controller css
 
 .img-profile {
-    // border-radius: 50%;
     -webkit-box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 10px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 10px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+p {
+  font-size: 18px;
 }
