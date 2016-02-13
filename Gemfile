@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 # this project in BDD
 group :development, :test do
   gem 'rspec-rails', '3.0.1'
+  #gem 'railroady'
 end
 
 # This gem is helpful in simulating how real world user will interact with website
