@@ -4,6 +4,10 @@
 // Application main html page i.e. html.erb CSS styling
 body {
   background-color: #fafafa;
+  background-image: url(/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% 100%;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
@@ -15,7 +19,7 @@ body {
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: #F7F7F7;
   height: 54px;
   .navbar-nav li a {
     color: #125688;
@@ -25,5 +29,58 @@ body {
 .navbar-container {
   width: 640px;
   margin: 0 auto;
+}
+
+.well {
+  background-color: rgba(245, 245, 245, 0.4);
+}
+
+//Logo Styling and Positioning
+.logo-img{
+    // max-width: 30%;
+    margin-top: -12px;
+    margin-left: -10px;
+    width: 120px;
+    height: 45px;
+}
+
+//Kaminari CSS Styling
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #F7F7F7;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
 }
 
