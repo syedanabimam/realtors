@@ -1,6 +1,10 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1 class="text-center"> Recently Added Posts</h1>
+        <% @posts.each do |post| %>
+             <h2 class="text-center"> Welcome, <%= post.user.user_name %></h2>
+        <% end %>
+       
         <%= paginate @posts %>
         <ul class="list-unstyled">
             <% @posts.each do |post| %>

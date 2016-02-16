@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216020022) do
+ActiveRecord::Schema.define(version: 20160216024246) do
 
   create_table "posts", force: true do |t|
     t.string   "customer_name"
@@ -34,7 +34,10 @@ ActiveRecord::Schema.define(version: 20160216020022) do
     t.string   "country"
     t.string   "city"
     t.string   "google_address"
+    t.integer  "user_id"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

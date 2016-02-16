@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user! 
+  before_action :owned_post, only: [:edit, :update, :destroy] 
     # Home page: queries all the posts and paginate them accorsingly
     def index  
       @posts = Post.all.order('created_at DESC').page params[:page] 
@@ -43,14 +44,14 @@ class PostsController < ApplicationController
     
     # Creates new instance of Post Object
     def new
-       @post = Post.new
+       @post = current_user.posts.build #Post.new
     end
     
     # This action saves the new form values to database upon checking if the record
     # can be saved. A successful save returns a flash message while user is informed
     # in case record is unable to saved
     def create
-       @post = Post.create(post_params)
+       @post = current_user.posts.build(post_params) #Post.create(post_params)
        if @post.save
           flash[:success] = "Your post has been created."
           redirect_to @post
@@ -136,5 +137,13 @@ class PostsController < ApplicationController
     def post_params
        params.require(:post).permit(:customer_name, :customer_email, :customer_phone_no, :house_name, :house_address, :description, :post_type_select, :image, :status, :rent_price, :city, :country, :google_address)
     end
+    
+    def owned_post
+      @post = Post.find(params[:id])
+      unless current_user == @post.user
+        flash[:alert] = "That post doesn't belong to you!"
+        redirect_to root_path
+      end
+    end 
 
 end
