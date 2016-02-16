@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user! 
     # Home page: queries all the posts and paginate them accorsingly
     def index  
       @posts = Post.all.order('created_at DESC').page params[:page] 
