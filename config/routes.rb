@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' } 
+   devise_for :users, :controllers => { registrations: 'registrations' }
   # Root/Index Page
   root  'posts#index'
+  
   
   # Generates RESTFUL API resources for posts with transaction as optional/added member
   resources :posts do
