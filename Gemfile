@@ -6,6 +6,8 @@ gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+
+# Using mysql for active record`s database
 gem 'mysql2', '0.3.18'
 
 # Use SCSS for stylesheets
@@ -20,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# For user authentication
 gem 'devise'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -77,6 +80,7 @@ gem 'geocoder'
 # more customizable
 gem 'gmaps4rails'
 
+# For backing up database
 gem 'yaml_db'
 
 #-------------------------------------------------------------------------------

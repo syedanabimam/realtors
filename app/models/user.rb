@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   
+  # Checks user name presence
   validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
   
+  # One user can have many posts
   has_many :posts, dependent: :destroy  
   
   # Include default devise modules. Others available are:

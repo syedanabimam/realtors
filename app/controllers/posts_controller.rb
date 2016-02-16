@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # To authenticate current users & stop users to edit, update or delete each other posts
   before_action :authenticate_user! 
   before_action :owned_post, only: [:edit, :update, :destroy] 
     # Home page: queries all the posts and paginate them accorsingly
@@ -138,10 +139,11 @@ class PostsController < ApplicationController
        params.require(:post).permit(:customer_name, :customer_email, :customer_phone_no, :house_name, :house_address, :description, :post_type_select, :image, :status, :rent_price, :city, :country, :google_address)
     end
     
+    # This method checks if the current user matches to the one whom the posts belong to
     def owned_post
       @post = Post.find(params[:id])
       unless current_user == @post.user
-        flash[:alert] = "That post doesn't belong to you!"
+        flash[:alert] = "Only owner of the posts are allowed to edit them!"
         redirect_to root_path
       end
     end 

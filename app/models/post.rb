@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  # Confirms user id exists for each post
   validates :user_id, presence: true  
    
   # New and Edit form validations
@@ -12,6 +13,7 @@ class Post < ActiveRecord::Base
   validates :post_type_select, presence: true
   validates :rent_price, presence: true, :numericality => {:only_integer => true}
   
+  # One post belongs to one user
   belongs_to :user 
   
   # Google Maps API callbacks to save the latitude and longitude value
