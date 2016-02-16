@@ -3,7 +3,7 @@
         <div class="text-center">
           <%= image_tag @post.image.url(:medium), class: 'user-show-avatar img-profile' %>
         </div><br/>
-        <p>Welcome, <%= @post.user.user_name %></p>
+        <h2>Posted by <%= @post.user.user_name %></h2>
         <h1><%= @post.house_name %></h1>
             <% if @post.status == "Sold" || @post.status == "Rented" %>
                 <h3><span class="label label-danger"><%= @post.status %></span></h3>
