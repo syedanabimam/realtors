@@ -1,0 +1,314 @@
+
+---
+posts:
+  columns:
+  - id
+  - customer_name
+  - customer_email
+  - customer_phone_no
+  - house_name
+  - house_address
+  - description
+  - post_type_select
+  - created_at
+  - updated_at
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  - status
+  - rent_price
+  - latitude
+  - longitude
+  - country
+  - city
+  - google_address
+  - user_id
+  records: 
+  - - 24
+    - Hasan Khan
+    - test@hassan.com
+    - '12342347'
+    - Khan House
+    - Street 876, House 574
+    - This house needs to be rented
+    - Rent
+    - '2016-02-13 01:42:10.497634'
+    - '2016-02-13 08:21:18.696657'
+    - house_7.jpg
+    - image/jpeg
+    - 72526
+    - '2016-02-13 02:37:57.222976'
+    - Rented
+    - '123123'
+    - 33.7293882
+    - 73.0931461
+    - Pakistan
+    - Islamabad
+    - Islamabad Pakistan
+    - 
+  - - 25
+    - Bashir Khan
+    - test@bash.com
+    - '12313345'
+    - Khan Palace
+    - '123456789'
+    - This house needs to be rented asap
+    - Rent
+    - '2016-02-13 02:49:43.109626'
+    - '2016-02-13 06:12:02.026089'
+    - house_6.jpg
+    - image/jpeg
+    - 43040
+    - '2016-02-13 02:49:42.821944'
+    - Rented
+    - '9000'
+    - 30.1829713
+    - 66.998734
+    - Pakistan
+    - Quetta
+    - Quetta Pakistan
+    - 
+  - - 26
+    - Adam Morris
+    - morris@test.com
+    - '789456123'
+    - Morris Palace
+    - House 123, street 894
+    - This house has been in our generations, but we are looking for active buyers
+    - Sell
+    - '2016-02-13 02:51:40.734386'
+    - '2016-02-13 06:11:40.969171'
+    - house_7.jpg
+    - image/jpeg
+    - 72526
+    - '2016-02-13 02:51:40.388280'
+    - Sold
+    - '8000'
+    - 34.0149748
+    - 71.5804899
+    - Pakistan
+    - Peshawar
+    - Peshawar Pakistan
+    - 
+  - - 29
+    - Hulk Hogan
+    - mohs@test.com
+    - '1223556789'
+    - Hogan Mansion
+    - House 123, street 1894
+    - This house needs to be rented asap
+    - Rent
+    - '2016-02-13 06:09:47.465619'
+    - '2016-02-13 06:11:22.435017'
+    - house_8.jpg
+    - image/jpeg
+    - 58892
+    - '2016-02-13 06:09:47.176243'
+    - Rented
+    - '8500'
+    - 30.1829713
+    - 66.998734
+    - Pakistan
+    - Quetta
+    - Quetta Pakistan
+    - 
+  - - 31
+    - Mark N
+    - test@kima.com
+    - '45548891'
+    - Mark Mansion
+    - House 123, street 894
+    - This house needs to be sold asap
+    - Rent
+    - '2016-02-13 08:07:49.439672'
+    - '2016-02-13 10:09:42.513775'
+    - house_5.jpg
+    - image/jpeg
+    - 45867
+    - '2016-02-13 08:07:49.032170'
+    - Rented
+    - '34534'
+    - 30.1829713
+    - 66.998734
+    - Pakistan
+    - Quetta
+    - Quetta Pakistan
+    - 
+  - - 32
+    - Rab Nawaz
+    - test@tested.com
+    - '289651152'
+    - Nawaz Deraaa
+    - Street 894, House 234
+    - This property needs to be sold asap
+    - Sell
+    - '2016-02-13 08:19:55.048382'
+    - '2016-02-13 08:20:53.282213'
+    - house_9.jpg
+    - image/jpeg
+    - 30151
+    - '2016-02-13 08:19:54.655627'
+    - Sold
+    - '782550'
+    - 34.0149748
+    - 71.5804899
+    - Pakistan
+    - Peshawar
+    - Peshawar Pakistan
+    - 
+  - - 35
+    - Hassan khan
+    - test@hassan.com
+    - '789456123'
+    - Khan Mansion
+    - House 324, Street980
+    - This property needs to be rented earliest by 5th June
+    - Rent
+    - '2016-02-13 10:14:32.625766'
+    - '2016-02-13 11:00:13.518548'
+    - house_5.jpg
+    - image/jpeg
+    - 45867
+    - '2016-02-13 10:14:32.237244'
+    - Rented
+    - '7500'
+    - 34.0149748
+    - 71.5804899
+    - Pakistan
+    - Peshawar
+    - Peshawar Pakistan
+    - 
+  - - 36
+    - John N
+    - johhny@test.com
+    - '1223456789'
+    - Johnn`s House
+    - Street 894, House 863
+    - This house needs to be sold asap as we are moving out. Interested folks please
+      contact us
+    - Sell
+    - '2016-02-13 10:16:33.074364'
+    - '2016-02-13 10:51:06.973309'
+    - house_7.jpg
+    - image/jpeg
+    - 72526
+    - '2016-02-13 10:16:32.492893'
+    - Sold
+    - '985000'
+    - 30.1829713
+    - 66.998734
+    - Pakistan
+    - Quetta
+    - Quetta Pakistan
+    - 
+  - - 37
+    - syed anab imam
+    - syed@test.com
+    - '123456789'
+    - Syed Mansion
+    - Street 876, House 574
+    - This house needs to be rented asap
+    - Rent
+    - '2016-02-13 10:44:18.101283'
+    - '2016-02-13 10:46:06.155681'
+    - house_5.jpg
+    - image/jpeg
+    - 45867
+    - '2016-02-13 10:44:17.812320'
+    - Rented
+    - '785220'
+    - 30.19838069999999
+    - 71.46870280000002
+    - Pakistan
+    - Multan
+    - Multan Pakistan
+    - 
+  - - 39
+    - Syed Mohsin
+    - mohs@test.com
+    - '123456789'
+    - Mohsin Palace
+    - Street 878, House 694
+    - This house needs to be sold
+    - Sell
+    - '2016-02-13 11:56:50.362055'
+    - '2016-02-13 12:00:03.779082'
+    - house_9.jpg
+    - image/jpeg
+    - 30151
+    - '2016-02-13 11:59:37.295856'
+    - Sold
+    - '58004'
+    - 33.5834014
+    - 71.43321929999999
+    - Pakistan
+    - Kohat
+    - Kohat Pakistan
+    - 
+  - - 42
+    - test1
+    - test1@email.com
+    - '123456789'
+    - test1 house
+    - Street 2 house 3
+    - Lets rent this house
+    - Rent
+    - '2016-02-14 11:54:00.620409'
+    - '2016-02-14 11:54:00.620409'
+    - 12025528_10153736048884063_1190053906_n.jpg
+    - image/jpeg
+    - 50848
+    - '2016-02-14 11:54:00.160662'
+    - Not Rented
+    - '8000'
+    - 33.7293882
+    - 73.0931461
+    - Pakistan
+    - Islamabad
+    - Islamabad Pakistan
+    - 
+  - - 43
+    - test2
+    - test2@test.com
+    - '4566789123'
+    - test2 house
+    - Street 2 house 5
+    - lets sell this house
+    - Sell
+    - '2016-02-14 11:55:07.178240'
+    - '2016-02-14 11:55:07.178240'
+    - 12048814_10153736048914063_1370281406_n.jpg
+    - image/jpeg
+    - 53731
+    - '2016-02-14 11:55:06.459677'
+    - Not Sold
+    - '7500'
+    - 33.598394
+    - 73.0441352
+    - Pakistan
+    - Rawalpindi
+    - Rawalpindi Pakistan
+    - 
+  - - 44
+    - gigug
+    - test@test.com
+    - '123456788'
+    - bashir villa
+    - R-331 house2
+    - hyggyuyug
+    - Rent
+    - '2016-02-14 17:57:01.880000'
+    - '2016-02-14 17:57:54.674904'
+    - 12025528_10153736048884063_1190053906_n.jpg
+    - image/jpeg
+    - 50848
+    - '2016-02-14 17:57:01.304614'
+    - Rented
+    - '8500'
+    - 33.5834014
+    - 71.43321929999999
+    - Pakistan
+    - Kohat
+    - Kohat Pakistan
+    - 
