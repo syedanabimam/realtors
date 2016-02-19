@@ -13,9 +13,14 @@
         <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
-                <li>
-            	  <%= link_to "Reports", reports_path %>
-            	  </li>
+                <% if current_user.admin? %>
+                  <li>
+                    <span class="label label-danger">Admin</span>
+                  </li>
+                  <li>
+              	  <%= link_to "Reports", reports_path %>
+              	  </li>
+                <% end %>
                 <li>
                   <%= link_to "New Post", new_post_path %>
                 </li>

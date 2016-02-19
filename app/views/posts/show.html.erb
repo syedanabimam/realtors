@@ -33,7 +33,7 @@
             <h4>Phone No: <%= @post.customer_phone_no %></h4>
             <h4>Email: <%= @post.customer_email %></h4>
          </div>
-        <% if @post.user.id == current_user.id %>
+        <% if @post.user.id == current_user.id || current_user.admin? %>
           <div class="text-center edit-links">
             <%= link_to "Cancel", posts_path, class: 'btn btn-default' %>
             |

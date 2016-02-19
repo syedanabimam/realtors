@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   # To authenticate current users & stop users to edit, update or delete each other posts
   before_action :authenticate_user! 
   before_action :owned_post, only: [:edit, :update, :destroy] 
+  before_action :is_admin, only: [:reports]
     # Home page: queries all the posts and paginate them accorsingly
     def index  
       @posts = Post.all.order('created_at DESC').page params[:page] 
@@ -147,5 +148,12 @@ class PostsController < ApplicationController
         redirect_to root_path
       end
     end 
+    
+    def is_admin 
+       unless current_user.admin == true
+        flash[:alert] = "Only Admin is allowed to view reports!"
+        redirect_to root_path
+       end
+    end
 
 end

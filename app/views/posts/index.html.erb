@@ -1,11 +1,9 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1 class="text-center"> Recently Added Posts</h1>
-        <% @posts.each do |post| %>
-            <% if post.user.id == current_user.id %>
-              <h2 class="text-center"> Welcome, <%= post.user.user_name %></h2>
-            <% end %>
-        <% end %>
+
+        <h2 class="text-center"> Welcome, <%= current_user.user_name %></h2>
+
        
         <%= paginate @posts %>
         <ul class="list-unstyled">
