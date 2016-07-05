@@ -7,6 +7,8 @@ gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
+gem 'rails_12factor', group: :production
+
 # Using mysql for active record`s database
 gem 'mysql2', '0.3.18', :group => [:development, :production]
 
