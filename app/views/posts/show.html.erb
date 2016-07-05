@@ -19,8 +19,8 @@
             <h2><%= @post.city %>, <%= @post.country %></h2>
             <h3><%= @post.house_address %></h3>
         </div>    
-        <div style='width: 450px;'>
-          <div id="map" style='width:450px; height: 400px;'></div>
+        <div class="text-center">
+          <div id="map" style='width:450px; height: 400px;' class="text-center"></div>
         </div>
         <h3 class="text-center">Price: $<%= @post.rent_price %> </h3>
         <div class="well profile-block profile-description">
@@ -45,11 +45,16 @@
 
 <script type="text/javascript">
     //These lines of code build the Google map container along with the markers and attributes
+
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
       markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+    });
+    
+    var mc = new MarkerClusterer(map, markers, { 
+        imagePath: 'https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/images/m' 
     });
 </script>
 
